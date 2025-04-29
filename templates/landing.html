@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome | StegoEncryptor</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .hero {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+      }
+      .btn-custom {
+        background-color: white;
+        color: #007bff;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 30px;
+        margin-top: 20px;
+        transition: 0.3s;
+      }
+      .btn-custom:hover {
+        background-color: #007bff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">StegoEncryptor</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1 class="display-4">Welcome to StegoEncryptor</h1>
+      <p class="lead">
+        Secure your messages inside images using powerful encryption.
+      </p>
+      <a href="/encode" class="btn btn-custom btn-lg">Get Started</a>
+    </div>
+
+    <footer class="text-center p-3 bg-dark">
+      <small>© 2025 StegoEncryptor. All rights reserved.</small>
+    </footer>
+  </body>
+</html>

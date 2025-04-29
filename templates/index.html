@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Steganography - Encode</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+      /* Style for the loading spinner */
+      #loading-spinner {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hide Your Message</h1>
+
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <div class="flash">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <form
+        action="/encode_message"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input type="file" name="image" required /><br /><br />
+
+        <textarea
+          name="message"
+          placeholder="Enter your secret message..."
+          required
+        ></textarea
+        ><br /><br />
+
+        <input
+          type="text"
+          name="secret_key"
+          placeholder="Enter Secret Key"
+          required
+        /><br /><br />
+
+        <select name="encryption" required>
+          <option value="">Select Encryption Method</option>
+          <option value="AES">AES</option>
+          <option value="DES">DES</option>
+          <option value="CEASER">Caesar Cipher</option></select
+        ><br /><br />
+
+        <button type="submit">Encode and Download</button>
+      </form>
+      <a href="/decode">Go to Decode</a>
+
+      <!-- Loading Spinner -->
+      <div id="loading-spinner">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript to show the spinner -->
+    <script>
+      document.querySelector("form").onsubmit = function () {
+        document.getElementById("loading-spinner").style.display = "block";
+      };
+    </script>
+  </body>
+</html>
